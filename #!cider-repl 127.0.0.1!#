@@ -1,0 +1,192 @@
+; CIDER 0.9.1 (Java 1.7.0_25, Clojure 1.7.0, nREPL 0.2.10)
+indie-school.core> (start-server)
+ArityException Wrong number of args (0) passed to: core/start-server  clojure.lang.AFn.throwArity (AFn.java:429)
+indie-school.core> (start-server 3000)
+15-Jul-22 18:31:38 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.core> (start-server 3000)
+15-Jul-22 18:32:43 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.core> (start-server 3000)
+15-Jul-22 18:33:02 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.core> (start-server 3000)
+15-Jul-22 18:42:58 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.core> (reset!)
+ArityException Wrong number of args (0) passed to: core/reset!  clojure.lang.AFn.throwArity (AFn.java:429)
+indie-school.core> (ring.util.anti-forgery/anti-forgery-field)
+"<input id=\"__anti-forgery-token\" name=\"__anti-forgery-token\" type=\"hidden\" value=\"Unbound: #&apos;ring.middleware.nti-forgery/*anti-forgery-token*\" />"
+indie-school.core> (start-server 3000)
+15-Jul-22 18:45:33 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.core> (ns indie-school.routes.home)
+nil
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (anti-forgery-field)
+"<input id=\"__anti-forgery-token\" name=\"__anti-forgery-token\" type=\"hidden\" value=\"Unbound: #&apos;ring.middleware.anti-forgery/*anti-forgery-token*\" />"
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 18:47:29 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 18:48:11 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 18:48:28 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> znet-user
+[{:email "cal@g.com", :pass "tiger"} {:email "macaca@g.com", :pass "lebron"} {:email "a", :pass "a"}]
+indie-school.routes.home> (ns indie-school.control.login)
+nil
+indie-school.control.login> (load login)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: login in this context, compiling:(C:\Users\Calvin\AppData\Local\Temp\form-init1987214863494285799.clj:1:1) 
+indie-school.control.login> (load "login")
+nil
+indie-school.control.login> znet-user
+[{:email "cal@g.com", :pass "tiger"} {:email "macaca@g.com", :pass "lebron"} {:email "a", :pass "a"}]
+indie-school.control.login> (filter #(= "a" (:email %)) znet-user)
+({:email "a", :pass "a"})
+indie-school.control.login> (filter #(= "aaa" (:email %)) znet-user)
+()
+indie-school.control.login> (first (filter #(= "aaa" (:email %)) znet-user))
+nil
+indie-school.control.login> (load "login")
+nil
+indie-school.control.login> (get-znet-user {:email "a" :pass "a"} znet-user)
+{:status true, :error nil}
+indie-school.control.login> (get-znet-user {:email "a" :pass "aa"} znet-user)
+{:status false, :error "password salah"}
+indie-school.control.login> (get-znet-user {:email "aaa" :pass "aa"} znet-user)
+{:status false, :error "user ini ndak ada"}
+indie-school.control.login> (load "login")
+nil
+indie-school.control.login> (get-znet-user {:email "aaa" :pass "aa"} znet-user)
+{:status false, :error "user ini ndak ada"}
+indie-school.control.login> (get-znet-user {:email "a" :pass "a"} znet-user)
+{:status true, :user {:email "a", :pass "a"}}
+indie-school.control.login> (load "login")
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: usermail in this context, compiling:(indie_school/control/login.clj:18:3) 
+indie-school.control.login> (load "login")
+nil
+indie-school.control.login> (ns indie-school.routes.home)
+nil
+indie-school.routes.home> (loaf "home")
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: loaf in this context, compiling:(C:\Users\Calvin\AppData\Local\Temp\form-init1987214863494285799.clj:1:1) 
+indie-school.routes.home> (load "home")
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: redirect in this context, compiling:(indie_school/routes/home.clj:33:13) 
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 19:49:44 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 19:50:37 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 19:52:01 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 19:52:21 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> indie-school.session/mem
+#object[clojure.lang.Atom 0x79140b4d {:status :ready, :val {"ee0d853c-06d9-4511-928e-e294c11a4c6a" {:ring.middleware.anti-forgery/anti-forgery-token "T+JkohFAqPkzkIGtpJOq0d7Eewz3zol7ErvnKIkcsw/ki4u53IcerkEW6IuZ3ZPMjy+hS5JWiBsgIbGM", :ring.middleware.session-timeout/idle-timeout 1437571349}}}]
+indie-school.routes.home> (@ indie-school.session/mem)
+ArityException Wrong number of args (0) passed to: PersistentArrayMap  clojure.lang.AFn.throwArity (AFn.java:429)
+indie-school.routes.home> @indie-school.session/mem
+{"ee0d853c-06d9-4511-928e-e294c11a4c6a" {:ring.middleware.anti-forgery/anti-forgery-token "T+JkohFAqPkzkIGtpJOq0d7Eewz3zol7ErvnKIkcsw/ki4u53IcerkEW6IuZ3ZPMjy+hS5JWiBsgIbGM", :ring.middleware.session-timeout/idle-timeout 1437571349}}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:19:51 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> @indie-school.session/mem
+{"ee0d853c-06d9-4511-928e-e294c11a4c6a" {:ring.middleware.anti-forgery/anti-forgery-token "T+JkohFAqPkzkIGtpJOq0d7Eewz3zol7ErvnKIkcsw/ki4u53IcerkEW6IuZ3ZPMjy+hS5JWiBsgIbGM", :ring.middleware.session-timeout/idle-timeout 1437573015, :user "20"}}
+indie-school.routes.home> @indie-school.session/mem
+{"ee0d853c-06d9-4511-928e-e294c11a4c6a" {:ring.middleware.anti-forgery/anti-forgery-token "T+JkohFAqPkzkIGtpJOq0d7Eewz3zol7ErvnKIkcsw/ki4u53IcerkEW6IuZ3ZPMjy+hS5JWiBsgIbGM", :ring.middleware.session-timeout/idle-timeout 1437573052, :user "12310"}}
+indie-school.routes.home> @indie-school.session/mem
+{"ee0d853c-06d9-4511-928e-e294c11a4c6a" {:ring.middleware.anti-forgery/anti-forgery-token "T+JkohFAqPkzkIGtpJOq0d7Eewz3zol7ErvnKIkcsw/ki4u53IcerkEW6IuZ3ZPMjy+hS5JWiBsgIbGM", :ring.middleware.session-timeout/idle-timeout 1437573052, :user "12310"}}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:24:00 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:25:52 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:29:18 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> @indie-school.session/mem
+{"ee0d853c-06d9-4511-928e-e294c11a4c6a" {:ring.middleware.anti-forgery/anti-forgery-token "T+JkohFAqPkzkIGtpJOq0d7Eewz3zol7ErvnKIkcsw/ki4u53IcerkEW6IuZ3ZPMjy+hS5JWiBsgIbGM", :ring.middleware.session-timeout/idle-timeout 1437573264, :user "12021"}}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:33:17 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:35:08 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:35:40 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:37:34 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:37:37 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:40:29 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (load "home")
+nil
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 20:44:32 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> (indie-school.core/start-server 3000)
+15-Jul-22 21:37:09 Calvin-VAIO INFO [indie-school.handler] - 
+-=[indie-school started successfully]=-
+{:path "/", :immutant.internal.options/validated? true, :dispatch? true, :auto-start true, :static-dir nil, :port 3000, :host "localhost", :virtual-host nil, :configuration nil, :contexts {#object[org.projectodd.wunderboss.web.UndertowWeb 0x659dacca "org.projectodd.wunderboss.web.UndertowWeb@659dacca"] ({:virtual-host nil, :path "/"})}, :servlet-name nil, :filter-map nil}
+indie-school.routes.home> 

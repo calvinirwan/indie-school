@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<p>this is the story of indie-school... work in progress</p>
+<p>here is your session {{session}}</p>
+
+<section class="loginform cf">
+<form action="/login" method="POST">
+    <ul>
+        <li><label for="usermail">Email</label>
+        <input type="text" name="usermail" placeholder="yourname@email.com" required></li>
+        <li><label for="password">Password</label>
+        <input type="password" name="password" placeholder="password" required></li>
+	{{anti-forgery|safe}}
+	<li>
+        <input type="submit" value="Login"></li>
+    </ul>
+</form>
+</section>
+{% endblock %}

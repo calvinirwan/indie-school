@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<p>this is the story of indie-school... work in progress</p>
+<p>here is your session {{session}}</p>
+
+<section class="loginform cf">
+<form action="/znet" method="POST">
+    <ul>
+        <li><label for="indie-school-id">indie-school-id</label>
+        <input type="text" name="indie-school-id" placeholder="id inde school anda" required></li>
+	{{anti-forgery|safe}}
+	<li>
+        <input type="submit" value="Login"></li>
+    </ul>
+</form>
+</section>
+{% endblock %}
