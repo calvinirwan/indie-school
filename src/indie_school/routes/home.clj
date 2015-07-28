@@ -57,10 +57,7 @@
 
 (defroutes home-routes
   (GET "/" [:as req] (home-page (:session req)))
-  (POST "/shit" [usermail password :as req] (set-user! (:user {:email usermail
-                                                               :pass password}) req))
   (GET "/about" [:as req] (about-page (:session req)))
-  (GET "/session" req (str (:session req) req))
   (GET "/znet" req
        (let [session (:session req)]
          (if (session-znet? session)
@@ -70,23 +67,19 @@
         [indie-school-id :as req]
         (let [ip (:remote-addr req)
               indie-school (client/post "http://127.0.0.1:3000/indie-school"
-                                  {:form-params {:indie-school-id indie-school-id
-                                                 :ip ip}})
+                                        {:form-params {:indie-school-id indie-school-id
+                                                       :ip ip}})
               session (:session req)
               body (read-string (:body indie-school))
               status (:status body)]
           (do (clojure.pprint/pprint status)
               (if status
-                #_(str session body)
-                #_(set-user! (:user (generate-indie-school-session session body)) req)
-                #_(redirect "/znet")
                 (-> (redirect "/znet")
                     (assoc :session (generate-indie-school-session session body)))
                 (str body status)))))
   (POST "/indie-school"
         [indie-school-id ip :as req]
         (let [status (get-user-status-indie-school indie-school-id ip indie-user)]
-          #_(str status indie-school-id ip)
           (str status)))
   (GET "/login" [:as req] (login-page (:session req)))
   (POST "/login"
@@ -94,37 +87,16 @@
         (let [status (get-user-status-znet usermail password znet-user)
               session (:user status)]
           (if (:status status)
-            #_(set-user! (:user {:user session}) req)
-            #_(do (set-user! (:user {:user session}) req))
             (-> (redirect "/znet")
                 (assoc :session {:user session}))
             (redirect "/login"))))
   (GET "/logout"
         [:as req]
         (let [a (redirect "/")]
-          (assoc a :session (dissoc (:session a) :user)))
-        #_(str (redirect "/")))
+          (assoc a :session (dissoc (:session a) :user))))
   (GET "/premium"
        req
        (let [session (:session req)]
          (if (session-premium? session)
            (premium-page session)
            (redirect "/znet")))))
-  ;; (GET "/test" req (-> (response "apalah") (ring.util.response/content-type "text/plain")
-  ;;                      (assoc :cookies  {"ring-session"
-  ;;                                        {:discard true,
-  ;;                                         :path "/",
-  ;;                                         :secure false,
-  ;;                                         :value "bd1111e7-e647-42a9-a124-14a63f61f823",
-  ;;                                         :version 0}})))
-
-;; (let [r1 (client/get "http://127.0.0.1:3000/login")
-;;       token-regex (str "name=\"__anti-forgery-token\" "
-;;                            "type=\"hidden\" value=\"(.+?)\"")
-;;       token (-> token-regex
-;;                 re-pattern
-;;                 (re-find (:body r1))
-;;                 second)
-;;       r2 (client/post "http://127.0.0.1:3000/login"
-;;                       {:headers {"X-CSRF-Token" token}
-;;                        :body {:usermail "a" :password "a"}})] r2)
