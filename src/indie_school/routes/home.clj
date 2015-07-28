@@ -78,8 +78,10 @@
           (do (clojure.pprint/pprint status)
               (if status
                 #_(str session body)
-                (set-user! (:user (generate-indie-school-session session body)) req)
+                #_(set-user! (:user (generate-indie-school-session session body)) req)
                 #_(redirect "/znet")
+                (-> (redirect "/znet")
+                    (assoc :session (generate-indie-school-session session body)))
                 (str body status)))))
   (POST "/indie-school"
         [indie-school-id ip :as req]
@@ -92,13 +94,16 @@
         (let [status (get-user-status-znet usermail password znet-user)
               session (:user status)]
           (if (:status status)
-            (set-user! (:user {:user session}) req)
-            #_(do (set-user! (:user status) req)
-                (redirect "/znet"))
+            #_(set-user! (:user {:user session}) req)
+            #_(do (set-user! (:user {:user session}) req))
+            (-> (redirect "/znet")
+                (assoc :session {:user session}))
             (redirect "/login"))))
   (GET "/logout"
         [:as req]
-        (remove-user! req))
+        (let [a (redirect "/")]
+          (assoc a :session (dissoc (:session a) :user)))
+        #_(str (redirect "/")))
   (GET "/premium"
        req
        (let [session (:session req)]
